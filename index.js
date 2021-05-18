@@ -27,7 +27,7 @@ function checkYuGiOh(n){
     var errorMessage = 'invalid parameter: ' + JSON.stringify(n)
     
 
-    if (isNaN(parseFloat(n)) || (typeof(n) !== 'number' && typeof(n) !== 'string')){
+    if (isNaN(parseInt(n)) || (typeof(n) !== 'number' && typeof(n) !== 'string')){
         console.log(errorMessage);
         return errorMessage;
     } else for (let i = 1; i <= n; i++){

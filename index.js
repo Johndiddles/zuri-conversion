@@ -25,8 +25,9 @@ function convertFarToCelsius(inputInFar){
 function checkYuGiOh(n){
     var newList = [];
     var errorMessage = 'invalid parameter: ' + JSON.stringify(n)
+    
 
-    if (typeof(n) !== 'number' || isNaN(parseInt(n))){
+    if (isNaN(parseFloat(n)) || (typeof(n) !== 'number' && typeof(n) !== 'string')){
         console.log(errorMessage);
         return errorMessage;
     } else for (let i = 1; i <= n; i++){
@@ -44,6 +45,9 @@ function checkYuGiOh(n){
             newList.push('gi')
         } else if (i % 2 == 0) {
             newList.push('yu')
+        } else if (isNaN(i % 2)){
+            console.log(errorMessage);
+            return errorMessage;
         } else {
             newList.push(i);
         }

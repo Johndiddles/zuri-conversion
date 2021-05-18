@@ -24,10 +24,11 @@ function convertFarToCelsius(inputInFar){
 
 function checkYuGiOh(n){
     var newList = [];
-    
+    var errorMessage = 'invalid parameter: ' + JSON.stringify(n)
 
-    if (typeof(n) !== 'number'){
-        return n + ' is not a valid integer'
+    if (typeof(n) !== 'number' || isNaN(parseInt(n))){
+        console.log(errorMessage);
+        return errorMessage;
     } else for (let i = 1; i <= n; i++){
         if (i % 2 == 0 && i % 3 == 0 && i % 5 == 0){
             newList.push('yu-gi-oh')
@@ -47,6 +48,6 @@ function checkYuGiOh(n){
             newList.push(i);
         }
     }
+    console.log(newList);
     return newList;
 }
-

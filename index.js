@@ -12,7 +12,7 @@ function convertFarToCelsius(inputInFar){
 
     } else { 
         if (isNaN(parseFloat(inputInFar))) {
-            return inputInFar + ' is not a valid number but a string'
+            return JSON.stringify(inputInFar) + ' is not a valid number but a string'
         } else {
             result = ((parseFloat(inputInFar) - 32) * 5/9).toFixed(4);        
             console.log(result)
